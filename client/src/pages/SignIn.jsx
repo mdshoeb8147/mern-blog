@@ -145,7 +145,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
-  const { loading, error: errorMessage } = useSelector((state) => state.user);
+  // const { loading, error: errorMessage } = useSelector((state) => state.user);
+  const { loading, error: errorMessage } =
+    useSelector((state) => state.user) || {};
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -188,41 +191,27 @@ export default function SignIn() {
             Blog
           </Link>
           <p className="text-sm mt-5">
-            Blog web App by Shoeb.You can sign in with your email and password.
+            This is a demo project. You can sign in with your email and password
+            or with Google.
           </p>
         </div>
         {/* right */}
-
         <div className="flex-1">
           <form className="flex flex-col gap-4 " onSubmit={handleSubmit}>
-            {/* <div className="">
-              <label value=" Username" />
-              <TextInput
-                type="text"
-                placeholder="Username"
-                id="username"
-                onChange={handleChange}
-                // className="mb-5"
-              />
-            </div> */}
             <div>
-              {/* <label value=" email" /> */}
               <TextInput
                 type="email"
                 placeholder="Email"
                 id="email"
                 onChange={handleChange}
-                // className="mb-5"
               />
             </div>
             <div>
-              {/* <label value=" Password"/> */}
               <TextInput
                 type="password"
                 placeholder="Password"
                 id="password"
                 onChange={handleChange}
-                // className="mb-5"
               />
             </div>
             <Button
@@ -253,6 +242,7 @@ export default function SignIn() {
             </Alert>
           )}
         </div>
+        ;
       </div>
     </div>
   );

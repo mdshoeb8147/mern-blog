@@ -191,8 +191,7 @@ export default function SignIn() {
             Blog
           </Link>
           <p className="text-sm mt-5">
-            This is a demo project. You can sign in with your email and password
-            or with Google.
+            Blog web App by Shoeb.You can sign in with your email and password.
           </p>
         </div>
         {/* right */}
@@ -242,7 +241,6 @@ export default function SignIn() {
             </Alert>
           )}
         </div>
-        ;
       </div>
     </div>
   );
